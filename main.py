@@ -4,20 +4,19 @@ import os
 import pyttsx3
 import webbrowser
 import openai
-# import random
 
 chatStr = ""
 
 def chat(query):
     global chatStr
     print(chatStr)
-    openai.api_key = "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"
-    chatStr += f"Keval: {query}\n Optimus: "
+    openai.api_key = "your open ai api here"
+    chatStr += f"your name here: {query}\n Optimus: "
     response = openai.Completion.create(
-        model="text-davinci-003",
+        model="text-davinci-003", # you can use other models as well
         prompt= chatStr,
         temperature=0.7,
-        max_tokens=4096,
+        max_tokens=4096,#adjust as per convinience
         top_p=1,
         frequency_penalty=0,
         presence_penalty=0
@@ -28,14 +27,14 @@ def chat(query):
 
 
 def ai(propmt):
-    openai.api_key = "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"
+    openai.api_key = "your open ai api here"
     text = f"OpenAI for response for propmt: {propmt} \n"
 
     response = openai.ChatCompletion.create(
-      model="text-davinci-003",
+      model="text-davinci-003",# you can use other models as well
       propmt=propmt,
       temperature=1,
-      max_tokens=4096,
+      max_tokens=4096,# adjust as per convinience
       top_p=1,
       frequency_penalty=0,
       presence_penalty=0
